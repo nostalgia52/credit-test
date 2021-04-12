@@ -1,22 +1,46 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Layout from '@/components/Layout/index'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/login',
+    component: () => import('@/views/Login/index')
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path:'/',
+    component: Layout,
+    redirect: '/dashboard',
+    children:[
+      {
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('@/components/Dashboard/Dashboard'),
+        meta: {title: '首页'}
+      }
+    ]
+  },
+  {
+    path:'/orgManage',
+    name: 'OrgManage',
+    alwaysShow: true,
+    component: Layout,
+    children: [
+      {
+        path: 'orgInfoManage',
+        name: 'OrgInfoManage',
+        component: () => import('@/views/orgManage/orgInfoManage/index'),
+        meta: { title: '机构信息' }
+      },
+      {
+        path: 'orgMemberManage',
+        name: 'OrgMemberManage',
+        component: () => import('@/views/orgManage/orgMemberManage/index'),
+        meta: { title: '机构成员' }
+      }
+    ]
   }
 ]
 

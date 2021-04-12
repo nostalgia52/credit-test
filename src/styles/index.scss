@@ -1,0 +1,234 @@
+@import './variables.scss';
+@import './layout.scss';
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial,
+    sans-serif;
+  font-size: 14px;
+  color: #333333;
+  overflow: hidden;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.label {
+  font-weight: 700;
+  color: #606266;
+  text-align: right;
+  display: inline-block;
+  width: 100px;
+}
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  color: #333333;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  height: 100%;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+div:focus {
+  outline: none;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+// flex 兼容性写法
+.flex {
+  display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+  display: -moz-box; /* Firefox 17- */
+  display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+  display: -moz-flex; /* Firefox 18+ */
+  display: -ms-flexbox; /* IE 10 */
+  display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+}
+
+.flex_1 {
+  -prefix-box-flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+/*清除浮动*/
+.clearfix {
+  clear: both;
+  *zoom: 1;
+}
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "\0020";
+  visibility: hidden;
+  height: 0;
+}
+
+//main-container全局样式
+.app-main {
+  min-height: 100%;
+  background-color: #fafbfc;
+}
+
+// 块级公共样式
+.div-layout {
+  padding: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+// 可点击文字
+.handle-text {
+  color: $blue;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 2px;
+  margin-left: 20px;
+}
+// 可点击文字
+.handle-text:hover {
+  text-decoration: underline;
+}
+
+// 重定向文字
+.redirect-text {
+  color: #333333;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-right: 10px;
+  display: inline-block;
+  text-align-last: justify;
+  width: 35px;
+  &:hover {
+    color: $blue;
+  }
+}
+
+.blue {
+  color: $blue;
+  cursor: pointer;
+}
+
+// 批量操作
+.handle-span {
+  color: #1890ff;
+  margin-left: 15px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.list-table {
+  margin-top: 20px;
+}
+
+.profilePhoto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.profilePhotoPath {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  float: left;
+}
+.upload-profilePhotoPath {
+  float: left;
+  margin-right: 10px;
+}
+
+// 修改地图样式
+.amap-marker-label{
+  border: none;
+  background-color: transparent;
+  color:#fff;
+  padding: 0;
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  line-height: 12px;
+  text-align: center;
+}
+.el-vue-search-box-container .search-tips{
+  width: 100%;
+}
+.el-vue-search-box-container .search-box-wrapper .search-btn{
+  background: #409eff !important;
+  color: #fff;
+}
+.amap-info{
+    width: 350px;
+    .amap-info-contentContainer{
+      position: relative;
+      background:rgba(48,49,51, 0.8);
+      padding: 10px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+      color:#fff;
+      .studentInfo{
+        font-size: 12px;
+        >p{
+          line-height: 18px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+      .corner{
+        position: absolute;
+        width: 0px;                 /*  宽高设置为0，很重要，否则达不到效果 */
+				height: 0px;
+				border: 8px solid rgba(48,49,51, 0.8);
+				border-bottom-color: transparent;    /* 设置透明背景色 */
+				border-left-color: transparent;
+        border-right-color: transparent;
+        bottom: -16px;
+        left: 47%;
+      }
+    }
+}
